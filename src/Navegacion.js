@@ -1,66 +1,49 @@
 import * as React from 'react';
-import { BottomNavigation, Text, Appbar } from 'react-native-paper';
+import { BottomNavigation, Appbar } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
+
 import Pasajes from './Pasajes';
 import Credito from './Credito';
 import Perfil from './Perfil';
 
-const pasajes = [
-    {
-        monto: 10.20,
-        fecha: "12/12/2012",
-        ruta: "Ruta 20"
-    },
-    {
-        monto: 10.20,
-        fecha: "12/12/2012",
-        ruta: "Ruta 20"
-    },
-    {
-        monto: 10.20,
-        fecha: "12/12/2012",
-        ruta: "Ruta 20"
-    }
-]
-
 const PasajesRoute = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Appbar.Header style={styles.topBar}>
                 <Appbar.Content
                     title="Pasajes"
                     titleStyle={styles.title}
                 />
             </Appbar.Header>
-            <Pasajes pasajes={pasajes}></Pasajes>
+            <Pasajes/>
         </View>
     )
 };
 
 const CreditoRoute = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Appbar.Header style={styles.topBar}>
                 <Appbar.Content
                     title="Crédito"
                     titleStyle={styles.title}
                 />
             </Appbar.Header>
-            <Credito credito={12.5} pasajes={pasajes}></Credito>
+            <Credito/>
         </View>
     )
 };
 
 const PerfilRoute = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Appbar.Header style={styles.topBar}>
                 <Appbar.Content
                     title="Perfil"
                     titleStyle={styles.title}
                 />
             </Appbar.Header>
-            <Perfil usuario={{ nombre: "Ismael", correo: "ismael@meza", contraseña: "asd" }}></Perfil>
+            <Perfil />
         </View>
     )
 };
@@ -89,8 +72,8 @@ export default class App extends React.Component<Props> {
                 navigationState={this.state}
                 onIndexChange={this._handleIndexChange}
                 renderScene={this._renderScene}
-                activeColor={"#303F9F"}
-                inactiveColor={"#9FA8DA"}
+                activeColor={"#2495F1"}
+                inactiveColor={"#BDBDBD"}
                 barStyle={styles.bar}
                 shifting={true}
 
@@ -100,11 +83,14 @@ export default class App extends React.Component<Props> {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     bar: {
         backgroundColor: "#FEFEFE",
     },
     topBar: {
-        backgroundColor: "#303F9F",
+        backgroundColor: "#2495F1",
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

@@ -17,14 +17,11 @@ export default class LoginView extends Component {
 
     login = () => {
         global.apiHandler.getToken(this.state.username, this.state.password)
-        .then(token => {
-            console.warn('Holiwis');
-            //return api.getUser()
-            // Actions.home();
-        })
-        // .then(user => api.getPayments())
-        // .then(payments => console.warn(api.user))
-        .catch(error => console.warn(error));
+        .then(_ => global.apiHandler.getUser())
+        .then(_ => global.apiHandler.getPayments())
+        .then(_ => {
+            Actions.home();
+        });
     };
 
     render() {
