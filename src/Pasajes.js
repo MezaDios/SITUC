@@ -43,14 +43,12 @@ export default class Pasajes extends React.Component<Props> {
 
     render() {
         return (
-            <View>
 
-                <ScrollView style={styles.container}>
+            <ScrollView style={styles.container}>
 
-                    {this.objetos}
+                {this.objetos}
 
-                </ScrollView>
-            </View >
+            </ScrollView>
         );
     }
 }

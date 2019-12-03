@@ -3,6 +3,7 @@ import { BottomNavigation, Text, Appbar } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
 import Pasajes from './src/Pasajes';
 import Credito from './src/Credito';
+import Perfil from './src/Perfil';
 
 const pasajes = [
   {
@@ -59,6 +60,7 @@ const PerfilRoute = () => {
           titleStyle={styles.title}
         />
       </Appbar.Header>
+      <Perfil usuario={{ nombre: "Ismael", correo: "ismael@meza", contraseña: "asd" }}></Perfil>
     </View>
   )
 };

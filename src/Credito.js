@@ -31,6 +31,10 @@ export default class Pasajes extends React.Component<Props> {
 
                     <Text style={styles.subtitulo}>Últimos viajes</Text>
 
+                    <View style={styles.pasajes}>
+
+                    </View>
+
                     <Button style={styles.boton} icon="refresh" mode="contained" onPress={() => console.log('Pressed')}>
                         Recargar
                     </Button>
@@ -56,9 +60,10 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     titulo: {
-        fontSize: 50,
+        fontSize: 35,
         color: "#4FC3F7",
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: 100
     },
     subtitulo: {
         fontSize: 20,
@@ -69,6 +74,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#4FC3F7",
         width: '80%',
         marginHorizontal: '10%'
+    },
+    pasajes: {
+        height: 300
     }
 });
 
