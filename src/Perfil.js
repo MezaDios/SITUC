@@ -49,14 +49,14 @@ export default class Perfil extends React.Component<Props> {
                     />
 
                     <TextInput
-                        label='Conotraseña'
+                        label='Contraseña'
                         value={this.state.usuario.contraseña}
                         secureTextEntry={true}
                         mode={"outlined"}
                         style={styles.input}
                     />
 
-                    <Button style={styles.boton} icon="edit" mode="contained" onPress={() => console.log('Pressed')}>
+                    <Button style={styles.boton} icon="pen" mode="contained" onPress={() => console.log('Pressed')}>
                         Modificar datos
                     </Button>
 

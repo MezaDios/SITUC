@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     boton: {
+        marginVertical: 30,
         backgroundColor: "#4FC3F7",
         width: '80%',
         marginHorizontal: '10%'

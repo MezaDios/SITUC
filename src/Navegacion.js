@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { BottomNavigation, Text, Appbar } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
-import Pasajes from './src/Pasajes';
-import Credito from './src/Credito';
+import Pasajes from './Pasajes';
+import Credito from './Credito';
+import Perfil from './Perfil';
 
 const pasajes = [
     {
@@ -59,6 +60,7 @@ const PerfilRoute = () => {
                     titleStyle={styles.title}
                 />
             </Appbar.Header>
+            <Perfil usuario={{ nombre: "Ismael", correo: "ismael@meza", contraseña: "asd" }}></Perfil>
         </View>
     )
 };
@@ -90,6 +92,7 @@ export default class App extends React.Component<Props> {
                 activeColor={"#303F9F"}
                 inactiveColor={"#9FA8DA"}
                 barStyle={styles.bar}
+                shifting={true}
 
             />
         );
