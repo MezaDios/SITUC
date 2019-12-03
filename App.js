@@ -1,14 +1,37 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Pasajes from './src/Pasajes';
 
-const PasajesRoute = () => <Text>Pasajes</Text>;
+const pasajes = [
+  {
+    monto: 10.20,
+    fecha: "12/12/2012",
+    ruta: "Ruta 20"
+  },
+  {
+    monto: 10.20,
+    fecha: "12/12/2012",
+    ruta: "Ruta 20"
+  },
+  {
+    monto: 10.20,
+    fecha: "12/12/2012",
+    ruta: "Ruta 20"
+  }
+]
+
+const PasajesRoute = () => {
+  return (
+    <Pasajes pasajes={pasajes}></Pasajes>
+  )
+};
 
 const CreditoRoute = () => <Text>Crédito</Text>;
 
 const PerfilRoute = () => <Text>Perfil</Text>;
 
-export default class MyComponent extends React.Component {
+export default class App extends React.Component<Props> {
   state = {
     index: 0,
     routes: [
@@ -43,7 +66,15 @@ export default class MyComponent extends React.Component {
 
 const styles = StyleSheet.create({
   bar: {
-    backgroundColor: "#FEFEFE"
+    backgroundColor: "#FEFEFE",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.78,
+    shadowRadius: 16.00,
 
+    elevation: 24,
   }
 });
