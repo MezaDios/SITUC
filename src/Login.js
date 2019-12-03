@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { Actions } from 'react-native-router-flux';
+import APIHandler from './api-client';
 
 export default class LoginView extends Component {
 
     constructor(props) {
+        global.apiHandler = new APIHandler();
         super(props);
         this.state = {
             username: null,
@@ -14,7 +16,15 @@ export default class LoginView extends Component {
     }
 
     login = () => {
-        Actions.home();
+        global.apiHandler.getToken(this.state.username, this.state.password)
+        .then(token => {
+            console.warn('Holiwis');
+            //return api.getUser()
+            // Actions.home();
+        })
+        // .then(user => api.getPayments())
+        // .then(payments => console.warn(api.user))
+        .catch(error => console.warn(error));
     };
 
     render() {
