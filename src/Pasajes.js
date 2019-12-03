@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { List, Appbar } from 'react-native-paper';
+import { List } from 'react-native-paper';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 export default class Pasajes extends React.Component<Props> {
@@ -44,13 +44,6 @@ export default class Pasajes extends React.Component<Props> {
     render() {
         return (
             <View>
-                <Appbar.Header style={styles.topBar}>
-                    <Appbar.Content
-                        title="Pasajes"
-                        titleStyle={styles.title}
-                    />
-                </Appbar.Header>
-
 
                 <ScrollView style={styles.container}>
 
@@ -72,22 +65,6 @@ const styles = StyleSheet.create({
     },
     container: {
         padding: 10,
-    },
-    topBar: {
-        backgroundColor: "#303F9F",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.22,
-        shadowRadius: 2.22,
-
-        elevation: 3,
-    },
-    title: {
-        fontSize: 25,
-        textAlign: 'center'
     },
     item: {
         borderBottomColor: 'gray',
